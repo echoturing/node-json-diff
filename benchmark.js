@@ -89,25 +89,6 @@ function benchmark(name, iterations, testFunction) {
   return duration;
 }
 
-// 序列化测试
-function testSerialization(data, dataSize) {
-  console.log(`\n📝 序列化测试 - ${dataSize} 数据`);
-  console.log('='.repeat(60));
-  
-  const iterations = dataSize === 'Large' ? 100 : dataSize === 'Medium' ? 1000 : 10000;
-  
-  // 原生 JSON 序列化
-  const nativeTime = benchmark(
-    '原生 JSON.stringify',
-    iterations,
-    () => JSON.stringify(data)
-  );
-  
-  // 注意：simdjson 主要是用于反序列化，没有序列化功能
-  console.log('\n⚠️  注意：simdjson 主要专注于 JSON 解析（反序列化），不提供序列化功能');
-  
-  return { native: nativeTime };
-}
 
 // 反序列化测试
 function testDeserialization(jsonString, dataSize) {
@@ -138,44 +119,6 @@ function testDeserialization(jsonString, dataSize) {
   return { native: nativeTime, simdjson: simdjsonTime };
 }
 
-// 内存使用测试
-function testMemoryUsage(data, jsonString, dataSize) {
-  console.log(`\n💾 内存使用测试 - ${dataSize} 数据`);
-  console.log('='.repeat(60));
-  
-  const memBefore = process.memoryUsage();
-  
-  // 测试原生 JSON
-  const startNative = process.hrtime.bigint();
-  for (let i = 0; i < 100; i++) {
-    JSON.parse(JSON.stringify(data));
-  }
-  const endNative = process.hrtime.bigint();
-  
-  const memAfterNative = process.memoryUsage();
-  
-  // 强制垃圾回收（如果可用）
-  if (global.gc) {
-    global.gc();
-  }
-  
-  // 测试 simdjson
-  const startSimd = process.hrtime.bigint();
-  for (let i = 0; i < 100; i++) {
-    simdjson.parse(jsonString);
-  }
-  const endSimd = process.hrtime.bigint();
-  
-  const memAfterSimd = process.memoryUsage();
-  
-  console.log('原生 JSON:');
-  console.log(`  堆内存使用: ${((memAfterNative.heapUsed - memBefore.heapUsed) / 1024 / 1024).toFixed(2)} MB`);
-  console.log(`  时间: ${(Number(endNative - startNative) / 1000000).toFixed(2)} ms`);
-  
-  console.log('simdjson:');
-  console.log(`  堆内存使用: ${((memAfterSimd.heapUsed - memAfterNative.heapUsed) / 1024 / 1024).toFixed(2)} MB`);
-  console.log(`  时间: ${(Number(endSimd - startSimd) / 1000000).toFixed(2)} ms`);
-}
 
 // 主测试函数
 function runBenchmarks() {
@@ -204,22 +147,16 @@ function runBenchmarks() {
   
   // 小数据测试
   results.small = {};
-  results.small.serialization = testSerialization(smallData, 'Small');
   results.small.deserialization = testDeserialization(smallJson, 'Small');
-  testMemoryUsage(smallData, smallJson, 'Small');
-  
+
   // 中等数据测试
   results.medium = {};
-  results.medium.serialization = testSerialization(mediumData, 'Medium');
   results.medium.deserialization = testDeserialization(mediumJson, 'Medium');
-  testMemoryUsage(mediumData, mediumJson, 'Medium');
-  
+
   // 大数据测试
   results.large = {};
-  results.large.serialization = testSerialization(largeData, 'Large');
   results.large.deserialization = testDeserialization(largeJson, 'Large');
-  testMemoryUsage(largeData, largeJson, 'Large');
-  
+
   // 总结报告
   console.log('\n📊 总结报告');
   console.log('='.repeat(60));
