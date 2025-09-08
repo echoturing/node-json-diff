@@ -1,0 +1,62 @@
+{
+  "generatedAt": "2025-09-08T11:04:04.339Z",
+  "environment": {
+    "platform": "darwin arm64",
+    "cpu": "Apple M3 Max",
+    "memory": "36.0 GB"
+  },
+  "versions": [
+    {
+      "node": "v16.20.2",
+      "v8": "9.4.146.26-node.26"
+    },
+    {
+      "node": "v22.19.0",
+      "v8": "12.4.254.21-node.29"
+    }
+  ],
+  "comparison": {
+    "small": [
+      {
+        "version": "v16.20.2",
+        "dataSize": "0.10 KB",
+        "avgTime": "0.000321 ms",
+        "opsPerSec": "3,120,092"
+      },
+      {
+        "version": "v22.19.0",
+        "dataSize": "0.10 KB",
+        "avgTime": "0.000313 ms",
+        "opsPerSec": "3,199,957"
+      }
+    ],
+    "medium": [
+      {
+        "version": "v16.20.2",
+        "dataSize": "331.19 KB",
+        "avgTime": "1.085987 ms",
+        "opsPerSec": "921"
+      },
+      {
+        "version": "v22.19.0",
+        "dataSize": "331.23 KB",
+        "avgTime": "0.877782 ms",
+        "opsPerSec": "1,139"
+      }
+    ],
+    "large": [
+      {
+        "version": "v16.20.2",
+        "dataSize": "7.14 MB",
+        "avgTime": "18.610443 ms",
+        "opsPerSec": "54"
+      },
+      {
+        "version": "v22.19.0",
+        "dataSize": "7.14 MB",
+        "avgTime": "15.851995 ms",
+        "opsPerSec": "63"
+      }
+    ]
+  }
+}

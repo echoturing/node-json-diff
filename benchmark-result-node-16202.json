@@ -1,0 +1,42 @@
+{
+  "nodeVersion": "v16.20.2",
+  "v8Version": "9.4.146.26-node.26",
+  "platform": "darwin arm64",
+  "cpu": "Apple M3 Max",
+  "memory": "36.0 GB",
+  "timestamp": "2025-09-08T11:03:49.303Z",
+  "memoryUsage": {
+    "before": {
+      "rss": 29.3,
+      "heapTotal": 4.81,
+      "heapUsed": 4.05,
+      "external": 0.35
+    },
+    "after": {
+      "rss": 102.05,
+      "heapTotal": 63.06,
+      "heapUsed": 33.44,
+      "external": 0.34
+    }
+  },
+  "results": {
+    "small": {
+      "dataSize": "0.10 KB",
+      "iterations": 50000,
+      "avgTime": "0.000321 ms",
+      "opsPerSec": "3,120,092"
+    },
+    "medium": {
+      "dataSize": "331.19 KB",
+      "iterations": 1000,
+      "avgTime": "1.085987 ms",
+      "opsPerSec": "921"
+    },
+    "large": {
+      "dataSize": "7.14 MB",
+      "iterations": 100,
+      "avgTime": "18.610443 ms",
+      "opsPerSec": "54"
+    }
+  }
+}

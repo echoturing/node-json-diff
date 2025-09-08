@@ -7,7 +7,10 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "benchmark": "node benchmark.js",
     "benchmark:enhanced": "node --expose-gc enhanced-benchmark.js",
-    "benchmark:simple": "node enhanced-benchmark.js"
+    "benchmark:simple": "node enhanced-benchmark.js",
+    "node-version-test": "node --expose-gc node-version-benchmark.js",
+    "compare-versions": "./run-version-comparison.sh",
+    "analyze-results": "node compare-results.js"
   },
   "keywords": [],
   "author": "",
