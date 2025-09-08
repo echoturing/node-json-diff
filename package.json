@@ -1,0 +1,19 @@
+{
+  "name": "node_json_diff",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "benchmark": "node benchmark.js",
+    "benchmark:enhanced": "node --expose-gc enhanced-benchmark.js",
+    "benchmark:simple": "node enhanced-benchmark.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "fast-json-stringify": "^6.0.1",
+    "simdjson": "^0.9.2"
+  }
+}
