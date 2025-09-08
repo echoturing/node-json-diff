@@ -10,13 +10,16 @@
     "benchmark:simple": "node enhanced-benchmark.js",
     "node-version-test": "node --expose-gc node-version-benchmark.js",
     "compare-versions": "./run-version-comparison.sh",
-    "analyze-results": "node compare-results.js"
+    "analyze-results": "node compare-results.js",
+    "json-vs-protobuf": "node json-vs-protobuf-benchmark.js",
+    "analyze-json-protobuf": "node analyze-json-protobuf-results.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "fast-json-stringify": "^6.0.1",
-    "simdjson": "^0.9.2"
+    "simdjson": "^0.9.2",
+    "protobufjs": "^7.2.6"
   }
 }

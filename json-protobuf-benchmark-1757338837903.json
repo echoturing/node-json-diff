@@ -1,0 +1,117 @@
+{
+  "timestamp": "2025-09-08T13:40:37.902Z",
+  "nodeVersion": "v22.19.0",
+  "platform": "darwin arm64",
+  "cpu": "Apple M3 Max",
+  "memory": "36.0 GB",
+  "results": {
+    "small": {
+      "size": {
+        "json": 60,
+        "protobuf": 24,
+        "compressionRatio": 60
+      },
+      "serialization": {
+        "json": {
+          "duration": 27.702542,
+          "avgTime": 0.0005540508400000001,
+          "opsPerSec": 1804888.5188947641,
+          "memoryDelta": 0.3087310791015625
+        },
+        "protobuf": {
+          "duration": 18.58875,
+          "avgTime": 0.000371775,
+          "opsPerSec": 2689798.9375294195,
+          "memoryDelta": 9.367889404296875
+        }
+      },
+      "deserialization": {
+        "json": {
+          "duration": 12.734041,
+          "avgTime": 0.00025468082,
+          "opsPerSec": 3926483.352770735,
+          "memoryDelta": 2.6930007934570312
+        },
+        "protobuf": {
+          "duration": 7.153833,
+          "avgTime": 0.00014307666,
+          "opsPerSec": 6989260.163048257,
+          "memoryDelta": -8.358909606933594
+        }
+      },
+      "iterations": 50000
+    },
+    "medium": {
+      "size": {
+        "json": 21587,
+        "protobuf": 8120,
+        "compressionRatio": 62.384768610737936
+      },
+      "serialization": {
+        "json": {
+          "duration": 25.321834,
+          "avgTime": 0.025321833999999998,
+          "opsPerSec": 39491.610283836475,
+          "memoryDelta": 6.709083557128906
+        },
+        "protobuf": {
+          "duration": 68.037792,
+          "avgTime": 0.068037792,
+          "opsPerSec": 14697.713882308233,
+          "memoryDelta": -0.48651885986328125
+        }
+      },
+      "deserialization": {
+        "json": {
+          "duration": 59.379917,
+          "avgTime": 0.059379917,
+          "opsPerSec": 16840.710639592173,
+          "memoryDelta": -7.206291198730469
+        },
+        "protobuf": {
+          "duration": 37.001333,
+          "avgTime": 0.037001333000000004,
+          "opsPerSec": 27026.053358672238,
+          "memoryDelta": 8.352752685546875
+        }
+      },
+      "iterations": 1000
+    },
+    "large": {
+      "size": {
+        "json": 5428584,
+        "protobuf": 3272265,
+        "compressionRatio": 39.721573802671195
+      },
+      "serialization": {
+        "json": {
+          "duration": 925.70475,
+          "avgTime": 9.2570475,
+          "opsPerSec": 108.02580412383107,
+          "memoryDelta": 5.635063171386719
+        },
+        "protobuf": {
+          "duration": 4351.400125,
+          "avgTime": 43.51400125,
+          "opsPerSec": 22.981108867803783,
+          "memoryDelta": -33.646751403808594
+        }
+      },
+      "deserialization": {
+        "json": {
+          "duration": 1266.200083,
+          "avgTime": 12.66200083,
+          "opsPerSec": 78.97645983648226,
+          "memoryDelta": 0.00018310546875
+        },
+        "protobuf": {
+          "duration": 1030.517584,
+          "avgTime": 10.305175839999999,
+          "opsPerSec": 97.03861588838255,
+          "memoryDelta": -182.1259536743164
+        }
+      },
+      "iterations": 100
+    }
+  }
+}

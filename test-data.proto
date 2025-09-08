@@ -1,0 +1,87 @@
+syntax = "proto3";
+
+package testdata;
+
+// 地址信息
+message Address {
+  string street = 1;
+  string city = 2;
+  string country = 3;
+  string zipCode = 4;
+}
+
+// 用户偏好设置
+message Preferences {
+  string theme = 1;
+  bool notifications = 2;
+  string language = 3;
+}
+
+// 用户信息
+message User {
+  int32 id = 1;
+  string name = 2;
+  string email = 3;
+  int32 age = 4;
+  Address address = 5;
+  Preferences preferences = 6;
+}
+
+// 产品尺寸
+message Dimensions {
+  double length = 1;
+  double width = 2;
+  double height = 3;
+}
+
+// 产品评论
+message Review {
+  int32 rating = 1;
+  string comment = 2;
+  string user = 3;
+}
+
+// 产品属性
+message ProductAttributes {
+  double weight = 1;
+  Dimensions dimensions = 2;
+  bool inStock = 3;
+  repeated Review reviews = 4;
+}
+
+// 产品项目
+message Item {
+  int32 id = 1;
+  string title = 2;
+  string description = 3;
+  string price = 4;
+  string category = 5;
+  repeated string tags = 6;
+  ProductAttributes attributes = 7;
+}
+
+// 元数据
+message Metadata {
+  string version = 1;
+  string timestamp = 2;
+  int32 total = 3;
+}
+
+// 用户列表
+message UserList {
+  repeated User users = 1;
+}
+
+// 产品目录
+message ProductCatalog {
+  Metadata metadata = 1;
+  repeated Item items = 2;
+}
+
+// 简单数据结构
+message SimpleData {
+  string name = 1;
+  int32 age = 2;
+  string city = 3;
+  bool active = 4;
+}
